@@ -11038,6 +11038,14 @@ body {
   outline: none;
   background-color: transparent;
 }
+#mainNav.navbar-color-update {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.navba-a-color-fff {
+  color: #fff !important;
+}
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 0;
