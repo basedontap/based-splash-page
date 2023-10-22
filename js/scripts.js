@@ -86,3 +86,46 @@ window.addEventListener('DOMContentLoaded', event => {
     document.addEventListener('scroll', navBarColorChange);
 
 });
+// Discord Modal
+function myFunction(){
+    var answerOne = document.querySelector('#recipient-name').value.toUpperCase();
+
+    if (answerOne === "BASED") { 
+      document.querySelector('#incorrect').innerHTML = "Correct!";
+      $("#next").text("Proceed");
+      $("#next").attr("class", "btn btn-success");
+      $("#next").attr("data-bs-target", "#exampleModalToggle2");
+      $("#next").attr("data-bs-toggle", "modal");
+      $("#result2").html("</br> To reveal your Discord link, copy and decode the following text:</br><strong> Uhw xlnea 46/Ka5/6319 Uldocwpopr 6r esi5o rg swgrod telmocx ipr teqls </strong> </br></br> Note</br>  Key: BASED </br> Alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 </br> <em> Hint: Blaise de Vigenère would be Based.</em></br> Paste your Answer in the box below and click 'Submit'")
+      }
+   else if (answerOne !== "BASED") {
+      document.querySelector('#incorrect').innerHTML = "INCORRECT! Try again.";
+
+    };
+  }
+
+  function myFunction2(){
+    var answerTwo = document.querySelector('#recipient-name2').value;
+
+    if (answerTwo === "The times 03/Jan/2009 Chancellor on brink of second bailout for banks") { 
+      document.querySelector('#incorrect').innerHTML = "Correct!";
+      $("#next").text("Proceed");
+      $("#next").attr("class", "btn btn-success");
+      $("#next").attr("data-bs-target", "#exampleModalToggle2");
+      $("#next").attr("data-bs-toggle", "modal");
+      $("#final").attr("data-bs-dismiss","modal");
+      $("#final").attr("class","btn btn-dark");
+      $("#final").text("Close");
+      $("#level2").text("CONGRATULATIONS!");
+      $("#result2").html("</br> JOIN OUR DISCORD USING THE LINK BELOW:</br> <a>https://discord.gg/QGmX68MFs</a>");
+      $("#result2 a").attr("href","https://discord.gg/QGmX68MFs");
+      $("#result2 a").attr("id","discord-link");
+      $("#recipient-name2").hide();
+      $("#incorrect2").hide();
+
+      }
+   else if (answerTwo !== "The times 03/Jan/2009 Chancellor on brink of second bailout for banks") {
+      document.querySelector('#incorrect2').innerHTML = "INCORRECT! Try again.";
+
+    };
+  };
