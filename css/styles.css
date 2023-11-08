@@ -112,10 +112,19 @@
   font-family: 'Nickainley';
   src: url('../assets/fonts/Nickainley.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype'); 
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
 
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
+  font-family: 'Space Grotesk';
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -173,6 +182,11 @@ h3, .h3 {
 h4, .h4 {
   font-size: calc(1.275rem + 0.3vw);
 }
+
+.logo-name {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 @media (min-width: 1200px) {
   h4, .h4 {
     font-size: 1.5rem;
@@ -8270,16 +8284,9 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.text-white-50-mb-0 {
-  --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
-  margin-bottom: 0 !important;
-}
-
 .text-white-50 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.5) !important;
-  font-weight: 900;
 }
 
 .text-reset {
@@ -11038,14 +11045,6 @@ body {
   outline: none;
   background-color: transparent;
 }
-#mainNav.navbar-color-update {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.navba-a-color-fff {
-  color: #fff !important;
-}
-
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 0;
@@ -11109,7 +11108,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 80%, #000 100%), url("../assets/img/BASED.gif");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, #000 100%), url("../assets/img/BASED.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11152,8 +11151,9 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  /* padding-top: 10rem; */
+  /* background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%); */
+  background-color: #000;
 }
 .about-section p {
   margin-bottom: 5rem;
@@ -11163,12 +11163,14 @@ body {
   padding: 5rem 0;
 }
 .projects-section .featured-text {
-  padding: 2rem;
+  padding: 0rem;
+
 }
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .projects-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid rgba(0, 0, 0, 0.075);
+    padding: 0 0 0 0;
+    /* border-left: 0.5rem solid rgba(0, 0, 0, 0.075); */
+    text-align: center;
   }
 }
 .projects-section .project-text {
@@ -11181,14 +11183,15 @@ body {
   }
 }
 
-.signup-section {
+/* .signup-section {
   padding: 10rem 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 90%, #000 100%), url("../assets/img/pizza_cyberpunk_universe-bottom-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-}
+} */
+
 .signup-section .form-signup input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
@@ -11229,7 +11232,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
 }
 .contact-section .social a:hover {
   color: rgba(255, 255, 255, 0.5);
@@ -11239,9 +11242,8 @@ body {
 }
 
 .footer {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
-/* discord modal */
 .boost{
   height: 80px;
   width: 80px;
@@ -11250,14 +11252,338 @@ body {
   height: 100px;
   width: 100px;
 }
-.modal-content {
+
+/* Custom styles for project cards */
+.card {
+  transition: transform 0.2s;
+  background-color: #0A0A0A
+  
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.roadmap-section {
   background-color: black;
-  color: azure;
+  padding: 50px 0; 
 }
-.btn-close {
-  background-color: #69676f;
+
+.roadmap-title {
+  font-weight: bold;
+  color: white;
 }
-#discord-link{
-  color: red;
+
+.milestone {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
-/* discord modal */
+
+
+.milestone-date {
+  font-weight: bold;
+  color: white; 
+}
+
+.milestone-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.milestone-description li {
+  margin-bottom: 10px;
+}
+
+#curved-border {
+  background-color: #000; 
+  border-radius: 50px;
+  padding: 20px; 
+  margin: 20px 0; 
+}
+
+.section-header {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.projects-section {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #000000;
+
+}
+
+.custom-btn {
+  display: block;
+  /* width: 100% */; 
+  padding: 10px 0;
+  border: 2px solid grey;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-outline-dark {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.roadmap {
+  position: relative;
+}
+
+.roadmap::before {
+  content: url('../assets/img/project-map-arrow.svg');
+  position: absolute;
+  top: 50%;
+  right: 40px; 
+  /* border-left: 2px solid white; */
+  height: 80%;
+  transform: translate(0, -50%);
+}
+
+/* .roadmap::after {
+  content: "˅"; 
+  position: absolute;
+  top: 88.5%; 
+  right: 35.6px; 
+  color: white; 
+} */
+
+
+.border-container {
+  border: 2px solid #000;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+
+
+.logo-container {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  margin-right: 10px; 
+  margin-left: -20px; 
+}
+
+
+.info-container {
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  flex: 1; 
+}
+
+.token-text {
+  margin-left: -20px;
+}
+
+
+.info-container img {
+  max-width: 100%;
+}
+
+.info-container h4 {
+  font-size: 24px;
+}
+
+.based-stats {
+  margin-right: 100px;
+}
+
+.boost-stats{
+  margin-right: 80px;
+}
+
+.based-title {
+  margin-left: -180px; 
+  margin-right: 100px;
+}
+
+.boost-title {
+  margin-left: -180px;
+}
+
+.based-info {
+  margin-left: -180px;
+  flex: 1; 
+  margin-right: 160px;
+}
+
+.boost-info {
+  margin-left: -180px;
+  margin-right: 160px;
+}
+
+.based-logo {
+  margin-left: -150px; 
+}
+
+.boost-logo {
+  margin-left: -150px
+}
+
+.info-container p {
+  font-size: 16px;
+  flex: 1; 
+}
+
+.border-container {
+  border: 1px solid white; 
+  margin: 0px; 
+  padding: 10px;
+  display: flex;
+  position: relative;
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.content {
+  display: flex;
+  align-items: center; 
+}
+
+.contact-body {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.91) 0%, rgba(0, 0, 0, 0.00) 100%), url(../assets/img/pizza_cyberpunk_universe-bottom-image_v2.png) !important;
+  background-attachment: scroll !important;
+  background-size: cover !important;
+  background-color: #000 !important;
+  width: 100%;
+  height: 750px;
+}
+
+.contact-body-footer {
+  width: 100%;
+  height: 50%;
+}
+
+.signup-section {
+  padding: 10rem 0;
+  width: 100%;
+  height: 50%;
+}
+
+
+#mainNav.navbar-color-update {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.navba-a-color-fff {
+  color: #fff !important;
+}
+
+
+/* tap protocol box*/
+.tap-protocol-detail {
+  width: 61.7%;
+  margin-right: 18.1%;
+}
+
+.tap-protocol-detail-container {
+  text-align: left !important;
+}
+
+.tap-protocol-detail-header {
+  margin-bottom: 12.73px;
+  color: #FFF !important;
+  font-family: Space Grotesk;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 46px;
+}
+
+.basedpad-detail-header {
+  margin-bottom: 12.73px;
+  color: #FFF !important;
+  font-family: Space Grotesk;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 46px;
+}
+
+.tap-protocol-detail-body-1 {
+  color: #FFF !important;
+  font-family: Space Grotesk;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-bottom: 22px !important; /* space between body 1 and 2 */
+}
+
+.tap-protocol-detail-body-2 {
+  color: #FFF !important;
+  font-family: Space Grotesk;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-bottom: 31.07px !important;
+}
+
+.tap-protocol-detail-body-a {
+  /* width: 41.5%; */
+  color: #FFF !important;
+  font-family: Space Grotesk;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  border: 1px solid #FFF;
+  padding: 12px 10px;
+}
+
+
+
+.tap-protocol-detail-body-allow {
+  width: 11px;
+}
+
+.tap-protocol-logo {
+  width: 20.2%;
+}
+
+#build-tap-logo {
+  padding: 20px 0px 0px 40px;
+}
+#built-on-tap {
+
+  padding: 40px 40px 0px 0px;
+}
